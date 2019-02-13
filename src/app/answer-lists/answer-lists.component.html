@@ -1,0 +1,26 @@
+<div class="container answer-list">
+  <div class="">
+    <h3 style="color:red;display: inline-block;">question</h3>
+    <button style="float: right;
+    margin-top: 10px;
+    background-color: red;
+    color: white;
+    padding: 8px 26px;" (click)="answerthis()">Answer this!</button>
+  </div>
+  <div class="">
+    <h4>{{questionandanswer.title}}</h4>
+    <p>{{questionandanswer.qsdes}}</p>
+  </div>
+  <div *ngIf=!addanswer>
+      <h3 style="color:green;">Answer</h3>
+      <div style="max-height:200px; overflow-y: scroll;">
+        <div *ngFor="let item of questionandanswer.answer">
+          <p>{{item.answer}}</p>
+        </div>
+      </div>
+
+  </div>
+  <div *ngIf=addanswer>
+      <app-submit-answer (answered)="onAnswered($event)"></app-submit-answer>
+  </div>
+</div>

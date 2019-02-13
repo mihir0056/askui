@@ -1,0 +1,13 @@
+<button style="float: right;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: green;
+    color: white;
+    padding: 8px 26px;" (click)="submitanswer()">Answer this!</button>
+<form #submitAnsForm="ngForm">
+  <div class="form-group">
+    <textarea class="form-control" id="answer" required [(ngModel)]="model.answer" name="answer"
+      #description="ngModel" rows="10" cols="35"></textarea>
+  </div>
+</form>
+

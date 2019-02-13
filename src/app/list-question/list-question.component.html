@@ -1,0 +1,8 @@
+<div style="border:1px solid black; max-height:100vh; overflow-y: scroll; color:black;">
+    <ul>
+      <li *ngFor="let item of questionLists">
+        <a routerLink="answerlist/{{item.id}}" >{{ item.title }}</a>
+      </li>
+    </ul>
+</div>
+

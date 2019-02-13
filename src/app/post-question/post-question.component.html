@@ -1,0 +1,29 @@
+<div class="container">
+  <h3>Ask a Question</h3>
+  <form #postQuestionForm="ngForm">
+
+    <div class="form-group">
+      <label for="name">Title</label>
+      <input type="text" class="form-control" id="title" required
+      [(ngModel)]="model.title" name="title" #title="ngModel">
+      <div [hidden]="title.valid || title.pristine" class="alert alert-danger">
+        Title is required
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="description">Question</label>
+      <textarea class="form-control"
+      id="description" required [(ngModel)]="model.qsdes"
+      name="description" #description="ngModel"
+      rows="10"
+      cols="35" ></textarea>
+      <div [hidden]="description.valid || description.pristine" class="alert alert-danger">
+        Question Description  is required
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-success"
+    [disabled]="!postQuestionForm.form.valid" (click)="onSubmit(postQuestionForm)">Submit</button>
+    </form>
+  </div>
+    
